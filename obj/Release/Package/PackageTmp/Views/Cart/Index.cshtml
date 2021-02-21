@@ -1,0 +1,47 @@
+﻿@model List<WebBanHang1.Models.CartItem>
+
+<table id="tblCart" class="table">
+    <thead>
+        <tr>
+            <td style="width:100px"><b>ID</b></td>
+            <td style="width:150px"><b>Name</b></td>
+            <td style="width:150px"><b>Quantity</b></td>
+            <td style="width:150px"><b>Price</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.masp</td>
+                <td class="Name">@item.ten</td>
+                @*<td class="Quantity"><span>@item.quantity</span>
+                        <input type="text" value="@item.quantity" style="display:none" />
+                    </td>*@
+                <td>
+                    @*<a class="Edit" href="javascript:;">Edit</a>
+                        <a class="Update" href="javascript:;" style="display:none">Update</a>
+                        <a class="Cancel" href="javascript:;" style="display:none">Cancel</a>
+                        <a class="Delete" href="javascript:;">Delete</a>*@
+                    <form action="@Url.Action("updatedCart")" method="get">
+                        <input type="hidden" name="id" value="@item.masp" />
+                        <input type="number" min="1" step="1" name="newQuantity" value="@item.sl" />
+                        <button type="submit" class="btn btn-primary btn-sm"> Update </button>
+                    </form>
+                </td>
+                <td>$@((item.sl * item.gia).ToString("#,##0").Replace(',', '.'))</td>
+                <td> <a href="@Url.Action("DeleteCart",new { id = item.sl })" onclick="return confirm('Do you want to delete?');" class="btn btn-danger btn-sm">Delete</a> </td>
+
+            </tr>
+        }
+        <tr>
+            <th>Total:</th>
+            <td>@Model.Sum(m => m.sl)</td>
+            <th>Total cost:</th>
+            <td><p class="cart_total_price">$@Model.Sum(m => m.total).ToString("#,##0").Replace(',', '.')</p></td>
+        </tr>
+    </tbody>
+</table>
+<a href="@Url.Action("Index", "Home")" class="btn btn-large"><i class="icon-arrow-left"></i> Continue Shopping </a>
+<a href="@Url.Action("Payment", "Cart")" class="btn btn-large pull-right">Next <i class="icon-arrow-right"></i></a>
+<hr />

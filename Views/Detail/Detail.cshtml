@@ -1,0 +1,59 @@
+﻿
+@model List<WebBanHang1.Models.SP>
+@*@for (int i = 0; i < Model.Count; i++)
+{
+    <div class="oferta">
+        <img src="~/@Model[i].anh" width="165" height="113" border="0" class="oferta_img" alt="" />
+        <div class="oferta_details">
+            <div class="oferta_title">@Model[i].ten</div>
+            <div class="oferta_text"> @Model[i].mota  </div>
+            <div class="prod_price"><span class="reduce">@Model[i].gia</span> <span class="price">@Model[i].giakm</span></div>
+            <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add</a>
+        </div>
+    </div>
+}*@
+@for (int i = 0; i < Model.Count; i++)
+{
+    <div class="center_title_bar">Makita 156 MX-VL</div>
+    <div class="prod_box_big">
+        <div class="center_prod_box_big">
+            <div class="product_img_big">
+                <a href="javascript:popImage('images/big_pic.jpg','Some Title')" title="header=[Zoom] body=[&nbsp;] fade=[on]"><img src="~/@Model[i].anh" alt="" border="0" /></a>
+                <div class="thumbs"> <a href="http://all-free-download.com/free-website-templates/" title="header=[Thumb1] body=[&nbsp;] fade=[on]"><img src="~/images/thumb1.jpg" alt="" border="0" /></a><a href="http://all-free-download.com/free-website-templates/" title="header=[Thumb2] body=[&nbsp;] fade=[on]"><img src="images/thumb2.jpg" alt="" border="0" /></a> <a href="http://all-free-download.com/free-website-templates/" title="header=[Thumb3] body=[&nbsp;] fade=[on]"><img src="images/thumb1.jpg" alt="" border="0" /></a> </div>
+            </div>
+            <div class="details_big_box">
+                <div class="product_title_big">@Model[i].ten</div>
+                <div class="specifications">
+                    Available: <span class="blue">In stock</span><br />
+                    Warranties: <span class="blue">24 months</span><br />
+                    Transport: <span class="blue"> delivery services company</span><br />
+                    Include :<span class="blue"> TVA</span><br />
+                    Description :<span class="blue">@Model[i].mota</span><br />
+                </div>
+                <div class="prod_price_big"><span class="reduce">@Model[i].gia</span> <span class="price">@Model[i].giakm</span></div>
+                <a href="@Url.Action("AddItem","Cart",new { masp = Model[i].masp, sl = Model[i].sl , ten = Model[i].ten , gia = Model[i].gia  })" class="prod_buy">add to cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_compare">compare</a>
+            </div>
+        </div>
+    </div>
+}
+
+@section Header{
+    <div class="top_right">
+        <div class="languages">
+            <div class="lang_text">Languages:</div>
+            <a href="http://all-free-download.com/free-website-templates/" class="lang"><img src="~/images/en.gif" alt="" border="0" /></a> <a href="http://all-free-download.com/free-website-templates/" class="lang"><img src="~/images/de.gif" alt="" border="0" /></a>
+        </div>
+        <div class="big_banner"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/images/banner728.jpg" alt="" border="0" /></a> </div>
+    </div>
+    <div id="logo"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/images/logo.png" alt="" border="0" width="182" height="85" /></a> </div>
+}
+@section Footer{
+    <div class="left_footer"> <img src="~/images/footer_logo.png" alt="" width="89" height="42" /> </div>
+    <div class="center_footer">
+        Template name. All Rights Reserved 2008<br />
+        <a href="http://csscreme.com"><img src="~/images/csscreme.jpg" alt="csscreme" title="csscreme" border="0" /></a><br />
+        <img src="~/images/payment.gif" alt="" />
+    </div>
+    <div class="right_footer"> <a href="http://all-free-download.com/free-website-templates/">home</a> <a href="http://all-free-download.com/free-website-templates/">about</a> <a href="http://all-free-download.com/free-website-templates/">sitemap</a> <a href="http://all-free-download.com/free-website-templates/">rss</a> <a href="http://all-free-download.com/free-website-templates/">contact us</a> </div>
+}
+

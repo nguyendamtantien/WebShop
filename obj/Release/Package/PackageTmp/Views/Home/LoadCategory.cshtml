@@ -1,0 +1,7 @@
+﻿@model List<WebBanHang1.Models.Loai_SP>
+<ul class="left_menu">
+    @foreach (var sp in Model)
+    {
+        <li class="odd"><a href="@Url.Action("Load_SP","Home",new {id = sp.maloai})">@sp.ten</a></li>
+    }
+</ul>

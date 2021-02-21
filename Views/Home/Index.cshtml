@@ -1,0 +1,151 @@
+﻿@model List<WebBanHang1.Models.SP>
+<div class="center_title_bar">Latest Products</div>
+<div>
+    @foreach (var sp in Model)
+    {
+        <div class="prod_box">
+            <div class="center_prod_box">
+                <div class="product_title"><a href="@Url.Action("Detail","Detail",new { id = sp.masp })">@sp.ten</a></div>
+                <div class="product_img"><a href="@Url.Action("Detail","Detail",new { id = sp.masp })"><img src="~/@sp.anh" alt="" border="0" /></a></div>
+                <div class="prod_price"><span class="reduce">@sp.gia</span> <span class="price">@sp.giakm</span></div>
+            </div>
+            <div class="prod_details_tab"> <a href="@Url.Action("AddItem","Cart",new { masp = sp.masp, sl = sp.sl , ten = sp.ten , gia = sp.gia  })" class="prod_buy">Add to Cart</a> <a href="@Url.Action("Detail","Detail",new { id = sp.masp })" class="prod_details">Details</a> </div>
+        </div>
+    }
+</div>
+@section Header{
+    <div class="top_right">
+        <div class="languages">
+            <div class="lang_text">Languages:</div>
+            <a href="http://all-free-download.com/free-website-templates/" class="lang"><img src="~/images/en.gif" alt="" border="0" /></a> <a href="http://all-free-download.com/free-website-templates/" class="lang"><img src="~/images/de.gif" alt="" border="0" /></a>
+        </div>
+        <div class="big_banner"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/images/banner728.jpg" alt="" border="0" /></a> </div>
+    </div>
+    <div id="logo"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/images/logo.png" alt="" border="0" width="182" height="85" /></a> </div>
+}
+@section Footer{
+    <div class="left_footer"> <img src="~/images/footer_logo.png" alt="" width="89" height="42" /> </div>
+    <div class="center_footer">
+        Template name. All Rights Reserved 2008<br />
+        <a href="http://csscreme.com"><img src="~/images/csscreme.jpg" alt="csscreme" title="csscreme" border="0" /></a><br />
+        <img src="~/images/payment.gif" alt="" />
+    </div>
+    <div class="right_footer"> <a href="http://all-free-download.com/free-website-templates/">home</a> <a href="http://all-free-download.com/free-website-templates/">about</a> <a href="http://all-free-download.com/free-website-templates/">sitemap</a> <a href="http://all-free-download.com/free-website-templates/">rss</a> <a href="http://all-free-download.com/free-website-templates/">contact us</a> </div>
+}
+@section Right{
+    <div class="right_content">
+        <div class="title_box">Search</div>
+        <div class="border_box">
+            <input type="text" name="newsletter" class="newsletter_input" value="keyword" />
+            <a href="http://all-free-download.com/free-website-templates/" class="join">search</a>
+        </div>
+        <div class="shopping_cart">
+            <div class="title_box">Shopping cart</div>
+            <div class="cart_details">
+                3 items <br />
+                <span class="border_cart"></span> Total: <span class="price">350$</span>
+            </div>
+            <div class="cart_icon"><a href="@Url.Action("Index","Cart")"><img src="~/images/shoppingcart.png" alt="" width="35" height="35" border="0" /></a></div>
+        </div>
+        <div class="title_box">What’s new</div>
+        <div class="border_box">
+            <div class="product_title"><a href="http://all-free-download.com/free-website-templates/">Motorola 156 MX-VL</a></div>
+            <div class="product_img"><a href="http://all-free-download.com/free-website-templates/"><img src="~/images/p2.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="title_box">Manufacturers</div>
+        <ul class="left_menu">
+            <li class="odd"><a href="http://all-free-download.com/free-website-templates/">Bosch</a></li>
+            <li class="even"><a href="http://all-free-download.com/free-website-templates/">Samsung</a></li>
+            <li class="odd"><a href="http://all-free-download.com/free-website-templates/">Makita</a></li>
+            <li class="even"><a href="http://all-free-download.com/free-website-templates/">LG</a></li>
+            <li class="odd"><a href="http://all-free-download.com/free-website-templates/">Fujitsu Siemens</a></li>
+            <li class="even"><a href="http://all-free-download.com/free-website-templates/">Motorola</a></li>
+            <li class="odd"><a href="http://all-free-download.com/free-website-templates/">Phillips</a></li>
+            <li class="even"><a href="http://all-free-download.com/free-website-templates/">Beko</a></li>
+        </ul>
+        <div class="banner_adds"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/images/bann1.jpg" alt="" border="0" /></a> </div>
+    </div>
+}
+@*<div class="oferta">
+        <img src="~/images/p1.png" width="165" height="113" border="0" class="oferta_img" alt="" />
+        <div class="oferta_details">
+            <div class="oferta_title">Power Tools BST18XN Cordless</div>
+            <div class="oferta_text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </div>
+            <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">details</a>
+        </div>
+    </div>
+    <div class="center_title_bar">Latest Products</div>
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <div class="product_title"><a href="http://all-free-download.com/free-website-templates/">Makita 156 MX-VL</a></div>
+            <div class="product_img"><a href="http://all-free-download.com/free-website-templates/"><img src="~/images/p1.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add to Cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_details">Details</a> </div>
+    </div>
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <div class="product_title"><a href="http://all-free-download.com/free-website-templates/">Bosch XC</a></div>
+            <div class="product_img"><a href="http://all-free-download.com/free-website-templates/"><img src="~/images/p2.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add to Cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_details">Details</a> </div>
+    </div>
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <div class="product_title"><a href="http://all-free-download.com/free-website-templates/">Lotus PP4</a></div>
+            <div class="product_img"><a href="http://all-free-download.com/free-website-templates/"><img src="~/images/p4.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add to Cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_details">Details</a> </div>
+    </div>
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <div class="product_title"><a href="http://all-free-download.com/free-website-templates/">Makita 156 MX-VL</a></div>
+            <div class="product_img"><a href="http://all-free-download.com/free-website-templates/"><img src="~/images/p3.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add to Cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_details">Details</a> </div>
+    </div>
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <div class="product_title"><a href="http://all-free-download.com/free-website-templates/">Bosch XC</a></div>
+            <div class="product_img"><a href="http://all-free-download.com/free-website-templates/"><img src="~/images/p5.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add to Cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_details">Details</a> </div>
+    </div>
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <div class="product_title"><a href="http://all-free-download.com/free-website-templates/">Lotus PP4</a></div>
+            <div class="product_img"><a href="http://all-free-download.com/free-website-templates/"><img src="~/images/p6.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add to Cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_details">Details</a> </div>
+    </div>
+    <div class="center_title_bar">Recomended Products</div>
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <div class="product_title"><a href="http://all-free-download.com/free-website-templates/">Makita 156 MX-VL</a></div>
+            <div class="product_img"><a href="http://all-free-download.com/free-website-templates/"><img src="~/images/p7.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add to Cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_details">Details</a> </div>
+    </div>
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <div class="product_title"><a href="http://all-free-download.com/free-website-templates/">Bosch XC</a></div>
+            <div class="product_img"><a href="http://all-free-download.com/free-website-templates/"><img src="~/images/p1.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add to Cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_details">Details</a> </div>
+    </div>
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <div class="product_title"><a href="http://all-free-download.com/free-website-templates/">Lotus PP4</a></div>
+            <div class="product_img"><a href="http://all-free-download.com/free-website-templates/"><img src="~/images/p3.jpg" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add to Cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_details">Details</a> </div>
+    </div>*@

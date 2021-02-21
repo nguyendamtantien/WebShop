@@ -1,0 +1,31 @@
+﻿@model List<WebBanHang1.Models.SP>
+@for (int i = 0; i < Model.Count; i++)
+{
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <div class="product_title"><a href="@Url.Action("Detail","Detail",new { id = Model[i].masp })">@Model[i].ten</a></div>
+            <div class="product_img"><a href="@Url.Action("Detail","Detail",new { id = Model[i].masp })"><img src="~/@Model[i].anh" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="reduce">@Model[i].gia</span> <span class="price">@Model[i].giakm</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="@Url.Action("AddItem","Cart",new { masp = Model[i].masp, sl = Model[i].sl , ten = Model[i].ten , gia = Model[i].gia  })" class="prod_buy">Add to Cart</a> <a href="@Url.Action("Detail","Detail",new { id = Model[i].masp })" class="prod_details">Details</a> </div>
+    </div>
+}
+@section Header{
+    <div class="top_right">
+        <div class="languages">
+            <div class="lang_text">Languages:</div>
+            <a href="http://all-free-download.com/free-website-templates/" class="lang"><img src="~/images/en.gif" alt="" border="0" /></a> <a href="http://all-free-download.com/free-website-templates/" class="lang"><img src="~/images/de.gif" alt="" border="0" /></a>
+        </div>
+        <div class="big_banner"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/images/banner728.jpg" alt="" border="0" /></a> </div>
+    </div>
+    <div id="logo"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/images/logo.png" alt="" border="0" width="182" height="85" /></a> </div>
+}
+@section Footer{
+    <div class="left_footer"> <img src="~/images/footer_logo.png" alt="" width="89" height="42" /> </div>
+    <div class="center_footer">
+        Template name. All Rights Reserved 2008<br />
+        <a href="http://csscreme.com"><img src="~/images/csscreme.jpg" alt="csscreme" title="csscreme" border="0" /></a><br />
+        <img src="~/images/payment.gif" alt="" />
+    </div>
+    <div class="right_footer"> <a href="http://all-free-download.com/free-website-templates/">home</a> <a href="http://all-free-download.com/free-website-templates/">about</a> <a href="http://all-free-download.com/free-website-templates/">sitemap</a> <a href="http://all-free-download.com/free-website-templates/">rss</a> <a href="http://all-free-download.com/free-website-templates/">contact us</a> </div>
+}

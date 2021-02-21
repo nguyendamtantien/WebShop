@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="web1-Web.config Connection String" description="web1 Connection String used in web.config by the application to access the database." defaultValue="data source=DESKTOP-DIVA437;initial catalog=webbanhang;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Superman\\source\\repos\\WebBanHang1\\WebBanHang1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='web1']/@connectionString" />
+  </parameter>
+  <parameter name="Model2-Web.config Connection String" description="Model2 Connection String used in web.config by the application to access the database." defaultValue="data source=DESKTOP-DIVA437;initial catalog=webbanhang;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Superman\\source\\repos\\WebBanHang1\\WebBanHang1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Model2']/@connectionString" />
+  </parameter>
+  <parameter name="Model3-Web.config Connection String" description="Model3 Connection String used in web.config by the application to access the database." defaultValue="data source=DESKTOP-DIVA437;initial catalog=webbanhang;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Superman\\source\\repos\\WebBanHang1\\WebBanHang1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Model3']/@connectionString" />
+  </parameter>
+</parameters>
